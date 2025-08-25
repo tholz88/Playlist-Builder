@@ -14,6 +14,12 @@ Small Flask API to build a playlist from Spotify searches, then create a real Sp
 
 ---
 
+## Quick Start
+```bash
+docker compose up
+```
+
+
 ## Quick Start (without Docker)
 ```bash
 python3 -m venv .venv
@@ -27,3 +33,4 @@ cp .env.example .env
 # run
 python main.py
 # → http://127.0.0.1:5000
+```

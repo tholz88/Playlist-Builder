@@ -19,4 +19,3 @@ HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
   CMD curl -fsS http://127.0.0.1:5000/playlist || exit 1
 
 CMD ["gunicorn", "-w", "2", "-k", "gthread", "-b", "0.0.0.0:5000", "main:app"]
-
