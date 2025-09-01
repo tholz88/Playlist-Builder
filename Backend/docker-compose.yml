@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      target: prod
     container_name: playlist-backend
     env_file:
       - .env
@@ -14,3 +15,11 @@ services:
       timeout: 5s
       retries: 3
     restart: unless-stopped
+
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: test
+    env_file:
+      - .env
