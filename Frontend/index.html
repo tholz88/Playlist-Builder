@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist-Builder</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/3d6e6a8f7e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>Playlist-Builder</h1>
+        <p>Finde deine Lieblingssongs und baue deine perfekte Playlist 🎶</p>
+    </header>
+
+    <main class="container">
+        <!-- Suche -->
+        <div class="header">
+            <input class="search-field" type="text" placeholder="Suche nach Songs oder Künstlern...">
+            <button class="btn">Suchen</button>
+        </div>
+
+        <!-- Ergebnisliste -->
+        <section class="content-row">
+            <div class="playlist-table">
+                <div class="song-item">
+                    <div>
+                        <div class="song-title">Shape of You</div>
+                        <div class="song-artist">Ed Sheeran</div>
+                    </div>
+                    <button class="delete-song"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aktionen -->
+        <div style="text-align: center;">
+            <button class="btn">Zur Playlist hinzufügen</button>
+            <button class="btn">Playlist exportieren</button>
+        </div>
+    </main>
+</body>
+</html>
