@@ -2,10 +2,10 @@ pipeline {
   agent any
 
   environment {
-    IMAGE_NAME = 'registry.example.com/playlist-backend'
-    REGISTRY   = 'registry.example.com'
+    IMAGE_NAME      = 'registry.example.com/playlist-backend'
+    REGISTRY        = 'registry.example.com'
     DOCKER_BUILDKIT = '1'
-    BACKEND_DIR = 'backend'
+    BACKEND_DIR     = 'backend'
   }
 
   options {
@@ -32,13 +32,17 @@ pipeline {
     stage('Run tests') {
       steps {
         dir(env.BACKEND_DIR) {
+          // Falls dein Test-Image die Tests beim Start ausführt:
           sh(script: "docker run --rm --env-file .env ${env.IMAGE_NAME}:test")
         }
       }
       post {
         always {
-          // Falls du JUnit-Reports erzeugst, Pfad hier aktivieren:
+          // Hier mindestens EIN gültiger Step, sonst "No steps specified"
+          echo 'Tests abgeschlossen (JUnit/Artefakte optional sammeln).'
+          // Beispiel, falls du Reports erzeugst:
           // junit allowEmptyResults: true, testResults: "${env.BACKEND_DIR}/reports/**/*.xml"
+          // archiveArtifacts artifacts: "${env.BACKEND_DIR}/reports/**", allowEmptyArchive: true
         }
       }
     }
@@ -84,7 +88,7 @@ pipeline {
       sh(script: 'docker image prune -f || true')
     }
     failure {
-      echo "Build or deployment failed. Check above logs."
+      echo "Build oder Deployment fehlgeschlagen. Logs oben prüfen."
     }
   }
 }
