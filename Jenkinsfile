@@ -38,7 +38,6 @@ pipeline {
       }
       post {
         always {
-          // Hier mindestens EIN gültiger Step, sonst "No steps specified"
           echo 'Tests abgeschlossen (JUnit/Artefakte optional sammeln).'
           // Beispiel, falls du Reports erzeugst:
           // junit allowEmptyResults: true, testResults: "${env.BACKEND_DIR}/reports/**/*.xml"
