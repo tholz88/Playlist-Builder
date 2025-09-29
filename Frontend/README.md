@@ -11,4 +11,5 @@ Rückgabe:
 }
 
 ## Todo
-- Playwright Codegen in Projekt importieren
+- Playwright Codegen in Projekt importieren -> https://chatgpt.com/c/68da6fa5-0ab4-832a-a603-44b05ee6ed31
+- Functional test, develop-test
