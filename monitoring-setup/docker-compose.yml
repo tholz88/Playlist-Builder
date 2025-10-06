@@ -31,3 +31,12 @@ alertmanager:
     - 9093:9093
   networks:
     - cm-net
+
+grafana:
+  image: grafana/grafana
+  env file:
+    - /srv/citiwatts/yml/grafana.env
+  ports:
+    - 3000:3000
+  networks:
+    - cm-net
