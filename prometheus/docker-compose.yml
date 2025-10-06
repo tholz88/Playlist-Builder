@@ -1,0 +1,22 @@
+prometheus:
+  image: prom/prometheus:v2.30.3
+  volumes :
+    - /srv/citiwatts/yml/prometheus.yml:/etc/prometheus/prometheus.yml
+  command:
+    - ' -- config.file=/etc/prometheus/prometheus. yml'
+  ports:
+    - 9090:9090
+  networks:
+    - cm-net
+
+cadvisor:
+  image: gcr.io/cadvisor/cadvisor
+  volumes :
+    - /:/rootfs:ro
+    - /var/run:/var/run:rw
+    - /sys: /sys: ro
+    - /var/lib/docker/:/var/lib/docker:ro
+  ports:
+    - 8081:8080
+  networks:
+    - cm-net
