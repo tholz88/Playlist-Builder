@@ -20,3 +20,14 @@ cadvisor:
     - 8081:8080
   networks:
     - cm-net
+
+alertmanager:
+  image: prom/alertmanager
+  volumes:
+    - /srv/citiwatts/yml/alertmanager. yml:/etc/alertmanager/alertmanager.yml
+  command:
+    - ' -- config. file=/etc/alertmanager/alertmanager. yml'
+  ports:
+    - 9093:9093
+  networks:
+    - cm-net
