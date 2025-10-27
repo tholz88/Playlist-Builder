@@ -1,0 +1,23 @@
+{
+  "name": "playlist-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tholz88/Playlist-Builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tholz88/Playlist-Builder/issues"
+  },
+  "homepage": "https://github.com/tholz88/Playlist-Builder#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
