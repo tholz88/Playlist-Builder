@@ -17,8 +17,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
-    port: 5173,
-    reuseExistingServer: true,
-  },
+  command: 'npx http-server . -p 5173',
+  port: 5173,
+  reuseExistingServer: true,
+ },
 });
